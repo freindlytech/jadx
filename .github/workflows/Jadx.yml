@@ -18,7 +18,7 @@ jobs:
       - name: Grant execute permission to Jadx and Setting 
         run: chmod +x bin/*
       - name: Running Given Task
-        run: jadx Tasks/classes.dex -d Completed
+        run: ./bin/jadx Tasks/classes.dex -d Completed
 
       - name: Uploading Decompiled File
         uses: actions/upload-artifact@v2
