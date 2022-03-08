@@ -1,0 +1,27 @@
+name: Jadx
+on: workflow_dispatch
+jobs:
+  build:
+    name: Jadx is Completing Task
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel previous runs
+        uses: styfle/cancel-workflow-action@0.5.0
+        with:
+          access_token: ${{ github.token }}
+
+      - uses: actions/checkout@v2
+    
+      - name: Downloading and Setting Up Jadx
+        run: wget https://github.com/skylot/jadx/releases/download/v1.3.3/jadx-1.3.3.zip && unzip jadx-1.3.3.zip && export PATH=$PATH:/home/runner/work/jadx/jadx/bin
+      - name: Grant execute permission to Jadx and Setting 
+        run: chmod +x bin/*
+      - name: Running Given Task
+        run: jadx Tasks/classes.dex -d Completed
+
+      - name: Uploading Decompiled File
+        uses: actions/upload-artifact@v2
+        if: ${{ !github.head_ref }}
+        with:
+          name: apk-release
+          path: Completed
