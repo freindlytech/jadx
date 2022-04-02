@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
     
       - name: Downloading and Setting Up Jadx
-        run: wget https://github.com/skylot/jadx/releases/download/v1.3.3/jadx-1.3.3.zip && unzip jadx-1.3.3.zip 
+        run: wget https://github.com/skylot/jadx/releases/download/v1.3.4/jadx-1.3.4.zip && unzip jadx-1.3.4.zip 
         
       - name: Grant execute permission to Jadx and Setting 
         run: chmod +x bin/*
