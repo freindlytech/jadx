@@ -18,7 +18,7 @@ jobs:
       - name: Grant execute permission to Jadx and Setting 
         run: chmod +x bin/*
       - name: Running Given Task
-        run: export PATH=$PATH:$GITHUB_WORKSPACE/bin && jadx Tasks/Apktool M_2.4.0-211203.apk -d Completed 
+        run: export PATH=$PATH:$GITHUB_WORKSPACE/bin && jadx Tasks/'Apktool M_2.4.0-211203.apk' -d Completed 
       - name: Uploading Decompiled File
         uses: actions/upload-artifact@v2
         if: ${{ !github.head_ref }}
