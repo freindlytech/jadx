@@ -1,4 +1,4 @@
-name: Jadx is Decompiling ApkTool
+name: Jadx
 on: workflow_dispatch
 jobs:
   build:
